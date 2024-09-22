@@ -1,0 +1,22 @@
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	currectTime := time.Now()
+
+	fmt.Println(currectTime.Format("01-02-2006 Monday"))
+
+	t := time.Date(2009, time.November, 10, 23, 0, 0, 0, time.UTC)
+	fmt.Println(t.GoString())
+	t = t.Add(1 * time.Minute)
+	fmt.Println(t.GoString())
+	t = t.AddDate(0, 1, 0)
+	fmt.Println(t.GoString())
+	t, _ = time.Parse("Jan 2, 2006 at 3:04pm (MST)", "Feb 3, 2013 at 7:54pm (UTC)")
+	fmt.Println(t.GoString())
+
+}
